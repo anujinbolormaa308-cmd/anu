@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Монгол Сүүн Бүтээгдэхүүн — Айраг, Ааруул, Тараг</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Base */
+body {margin:0;font-family:'Montserrat',sans-serif;background:#fafafa;color:#111;scroll-behavior:smooth;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+header{position:fixed;top:0;width:100%;z-index:2000;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;}
+.logo{font-size:28px;font-weight:700;color:#0b3d91;}
+nav ul{list-style:none;display:flex;gap:30px;}
+nav ul li a{font-weight:500;font-size:16px;transition:.3s;}
+nav ul li a:hover{color:#1e90ff;}
+
+/* Hero */
+.hero{height:90vh;background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.65)),url('https://upload.wikimedia.org/wikipedia/commons/5/59/Traditional_Mongolian_clothes.jpg') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:white;padding:0 20px;}
+.hero h1{font-size:56px;margin-bottom:20px;font-weight:700;text-shadow:0 5px 15px rgba(0,0,0,0.4);}
+.hero p{font-size:20px;max-width:800px;}
+
+/* Section */
+section{padding:100px 10%;position:relative;}
+h2{font-size:40px;color:#0b3d91;margin-bottom:25px;font-weight:700;position:relative;}
+h2::after{content:"";display:block;width:70px;height:3px;background:#1e90ff;margin-top:8px;border-radius:2px;}
+.sub-title{font-size:26px;font-weight:600;margin-top:40px;margin-bottom:15px;color:#0b3d91;}
+.text{line-height:1.85;font-size:18px;color:#222;max-width:1100px;}
+.small{font-size:16px;}
+
+/* Grid / Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px;}
+.card{background:#fff;padding:25px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.08);border:1px solid #e0e5ec;transition:.5s;overflow:hidden;position:relative;}
+.card:hover{transform: translateY(-10px) scale(1.03);box-shadow:0 20px 40px rgba(0,0,0,0.12);border-color:#1e90ff;}
+.card img{width:100%;border-radius:12px;margin-bottom:15px;transition:.5s;}
+.card img:hover{transform:scale(1.03);}
+.card h3{margin:10px 0 8px 0;color:#0b3d91;}
+.card p{font-size:16px;line-height:1.6;}
+.card ul{line-height:1.6;margin-left:15px;}
+
+/* Images */
+.section-image{width:100%;max-width:900px;margin:35px auto;border-radius:15px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:.5s;}
+.section-image:hover{transform:scale(1.02);}
+
+/* Footer */
+footer{background:#0b3d91;color:white;text-align:center;padding:30px;margin-top:60px;font-size:16px;}
+
+/* Back to top */
+#backTop{position:fixed;bottom:30px;right:30px;background:#1e90ff;color:#fff;padding:12px 18px;border-radius:10px;cursor:pointer;display:none;box-shadow:0 5px 20px rgba(0,0,0,0.3);transition:.3s;}
+#backTop:hover{background:#0b78e3;}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div class="logo">Монгол Сүүн Бүтээгдэхүүн</div>
+<ul>
+<li><a href="#origin">Үүсэл</a></li>
+<li><a href="#products">Бүтээгдэхүүн</a></li>
+<li><a href="#benefits">Ашиг тус</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="hero">
+<h1>Монгол Сүүн Бүтээгдэхүүн — Айраг, Ааруул, Тараг</h1>
+<p>Нүүдэлчдийн уламжлалт сүүн бүтээгдэхүүн нь эрүүл мэнд, соёл, амьдралын салшгүй хэсэг юм.</p>
+</div>
+
+<!-- Origin -->
+<section id="origin">
+<h2>🕊️ Үүсэл & Гарал</h2>
+<div class="text">
+<p>Монголын сүүн бүтээгдэхүүнүүд нь нүүдэлчин ахуй, мал аж ахуй, өргөн бэлчээртэй газар үүссэн. Сүүгээр төрөл бүрийн цагаан идээ — айраг, тараг, аарц, ааруул, цөцгий — гаргаж иржээ.</p>
+<p class="small">Эртний үеэс малын сүүг боловсруулах аргууд хөгжиж, хүнсний шим тэжээл хадгалах, архи/исгэлтээр төрөлжүүлэх уламжлалтай.</p>
+<img class="section-image" src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Mongolian_dairy_products.jpg" alt="Монгол сүүн бүтээгдэхүүн">
+</div>
+</section>
+
+<!-- Products -->
+<section id="products">
+<h2>🥛 Бүтээгдэхүүнүүд</h2>
+<div class="grid">
+<!-- Айраг -->
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Airag_mongolia.jpg" alt="Айраг">
+<h3>Айраг</h3>
+<p>Гүүний сүүг исгэж бэлтгэдэг уламжлалт ундаа.</p>
+<ul>
+<li>Хийх арга: Сүүг цэвэр саванд хийж, модон ташуур ашиглан хутган исгэх.</li>
+<li>Архины төрөл: 2–3% исгэлттэй (сүү исгэж боловсруулснаар гардаг)</li>
+<li>Хэв / Шиг: Шаргал өнгөтэй, бага зэрэг исгэлсэн, шингэн ундаа</li>
+<li>Хэрэглээ: Өдөр тутам, баяр, зочлолт</li>
+<li>Ашиг тус: Гэдэсний бактерийг тэнцвэржүүлж, дархлаа дэмжинэ</li>
+</ul>
+</div>
+
+<!-- Ааруул -->
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Mongolian_traditional_clothes.jpg" alt="Ааруул">
+<h3>Ааруул</h3>
+<p>Сүүг боловсруулж, хатаасан уламжлалт идээ.</p>
+<ul>
+<li>Хийх арга: Тараг, аарцнаас гаргаж, хатаах, хавтгай/бөөн хэлбэртэй болгох.</li>
+<li>Хэв / Шиг: Хатсан, элэгддэг бөөн/бөмбөлөг хэлбэртэй</li>
+<li>Хэрэглээ: Хадгалах, өвөл, аялал, өдөр тутам</li>
+<li>Ашиг тус: Уураг, кальци, эрдэс амин дэмээр баялаг</li>
+</ul>
+</div>
+
+<!-- Тараг -->
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Yogurt_mongolia.jpg" alt="Тараг">
+<h3>Тараг</h3>
+<p>Үхэр, хонь, тэмээ, адууны сүүгээр исгэж бэлтгэдэг идээ.</p>
+<ul>
+<li>Хийх арга: Сүүг буцалгаж, хөргөөд исгэлтэд оруулах.</li>
+<li>Хэв / Шиг: Зөөлөн, зузаан, кремлэг бүтэцтэй</li>
+<li>Хэрэглээ: Өдөр тутам болон баяр ёслол</li>
+<li>Ашиг тус: Гэдэсний шим шингээлт, кальци, уураг</li>
+</ul>
+</div>
+
+<!-- Цөцгий -->
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Cream_mongolia.jpg" alt="Цөцгий">
+<h3>Цөцгий</h3>
+<p>Сүүг буцалгаж, өөх тосыг салгаж бэлтгэдэг.</p>
+<ul>
+<li>Хийх арга: Сүүг бүлээнээр нь сааж, хөвсгөр давхаргыг авч гаргах</li>
+<li>Хэв / Шиг: Бөөн хэлбэртэй, өтгөн кремлэг</li>
+<li>Хэрэглээ: Баяр, хоолонд нэмэх</li>
+<li>Ашиг тус: Өөх тос, энерги, витамин агуулдаг</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Benefits -->
+<section id="benefits">
+<h2>💪 Эрүүл мэнд ба Ашиг тус</h2>
+<div class="text">
+<ul style="line-height:1.8;">
+<li>✔ Уураг, өөх тос, кальци, витамин (A,D,B,E) баялаг</li>
+<li>✔ Гэдэсний бактерийг тэнцвэржүүлж, шингээлтийг дэмжинэ</li>
+<li>✔ Дархлаа дэмжинэ</li>
+<li>✔ Өвлийн улиралд энерги, дулаан хэрэгцээг хангана</li>
+<li>✔ Хадгалах, аялал, өдөр тутмын хэрэглээнд тохиромжтой</li>
+<li>✔ Соёл уламжлал: баяр ёслол, зочлолтод хэрэглэгддэг</li>
+</ul>
+</div>
+</section>
+
+<footer>
+© 2025 Монгол Сүүн Бүтээгдэхүүн — Соёл & Шим тэжээл
+</footer>
+
+<div id="backTop">▲</div>
+
+<script>
+// Back to top button
+const backTop=document.getElementById("backTop");
+window.addEventListener("scroll",()=>{backTop.style.display=window.scrollY>300?"block":"none";});
+backTop.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"});});
+</script>
+
+</body>
+</html>

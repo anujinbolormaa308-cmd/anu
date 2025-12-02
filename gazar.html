@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>21 Аймаг — Монгол орны үзэсгэлэнт газрууд</title>
+  <meta name="description" content="Монгол Улсын 21 аймаг — тус бүрийн хамгийн үзэсгэлэнт газар. Цагаан, цэнхэр, хар өнгийн сэтгэл татам дизайн." />
+  <style>
+    :root{
+      --bg: #ffffff;
+      --panel: #0b1220; /* хар */
+      --accent: #0a66ff; /* цэнхэр */
+      --accent-2: #00a3ff;
+      --muted: #6b7280;
+      --glass: rgba(255,255,255,0.06);
+      --radius: 14px;
+      --max-width: 1200px;
+      --card-gap: 22px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    /* Reset-ish */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, #fbfdff 0%, #f3fbff 100%);
+      color:var(--panel);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      font-size:16px;
+      line-height:1.45;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+    }
+
+    /* Header */
+    header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:28px;
+    }
+
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+
+    .logo{
+      width:56px;height:56px;
+      border-radius:12px;
+      background: linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(10,102,255,0.18);
+    }
+
+    .site-title{
+      display:flex;flex-direction:column;
+    }
+
+    .site-title .title{
+      font-weight:700;color:var(--panel);font-size:18px;
+    }
+
+    .site-title .subtitle{
+      font-size:13px;color:var(--muted);
+    }
+
+    .controls{
+      display:flex;gap:12px;align-items:center;
+    }
+
+    .search{
+      display:flex;align-items:center;gap:8px;
+      background:#fff;border-radius:999px;padding:8px 12px;box-shadow:0 4px 18px rgba(8,10,12,0.06);
+      border:1px solid rgba(10,16,24,0.04);
+    }
+
+    .search input{
+      border:0;outline:0;background:transparent;font-size:14px;color:var(--panel);
+    }
+
+    .cta{
+      background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;
+      box-shadow:0 8px 22px rgba(10,102,255,0.20);text-decoration:none;font-weight:600;
+    }
+
+    /* Hero */
+    .hero{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      background: linear-gradient(90deg, rgba(10,102,255,0.06), rgba(0,163,255,0.03));
+      padding:22px;border-radius:16px;margin-bottom:22px;
+      border:1px solid rgba(10,102,255,0.06);
+    }
+
+    .hero-left{
+      flex:1;
+    }
+    .hero h1{
+      margin:0;font-size:22px;color:var(--panel);
+    }
+    .hero p{margin:8px 0 0;color:var(--muted);font-size:14px}
+
+    .hero-right{
+      min-width:220px;display:flex;justify-content:flex-end;
+    }
+
+    /* Grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:var(--card-gap);
+    }
+
+    @media (max-width:1000px){
+      .grid{grid-template-columns: repeat(2, 1fr)}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns: 1fr}
+      header{flex-direction:column;align-items:flex-start;gap:14px}
+      .hero{flex-direction:column;align-items:flex-start}
+      .hero-right{width:100%;justify-content:flex-start}
+    }
+
+    /* Card */
+    .card{
+      background:linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(8,12,20,0.06);
+      transition:transform .28s cubic-bezier(.2,.9,.26,1), box-shadow .28s;
+      display:flex;flex-direction:column;
+      border:1px solid rgba(11,18,32,0.04);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 22px 46px rgba(10,20,40,0.12);
+    }
+
+    .card .media{
+      position:relative;height:170px;overflow:hidden;
+      background:linear-gradient(135deg, #e6f2ff 0%, #fff 100%);
+    }
+    .card .media img{
+      width:100%;height:100%;object-fit:cover;display:block;
+      transition:transform .6s cubic-bezier(.2,.9,.26,1);
+    }
+    .card:hover .media img{transform:scale(1.06)}
+
+    .card .body{
+      padding:16px 16px 18px;display:flex;flex-direction:column;gap:10px;
+    }
+
+    .province{
+      display:flex;align-items:center;justify-content:space-between;gap:8px;
+    }
+    .province .name{
+      font-weight:700;font-size:16px;color:var(--panel);
+    }
+    .province .badge{
+      font-size:12px;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:white;font-weight:600;
+    }
+
+    .place{
+      color:var(--muted);font-size:14px;
+    }
+
+    .meta{
+      display:flex;align-items:center;justify-content:space-between;margin-top:auto;
+      gap:10px;
+    }
+
+    .meta .more{
+      text-decoration:none;color:var(--accent);font-weight:600;font-size:14px;
+    }
+
+    .meta .small{
+      font-size:13px;color:var(--muted);
+    }
+
+    /* Footer note */
+    .note{
+      margin-top:20px;color:var(--muted);font-size:13px;text-align:center;
+    }
+
+    /* nice focus */
+    a:focus, button:focus, input:focus{outline:3px solid rgba(10,102,255,0.12);outline-offset:3px;border-radius:8px}
+
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <div class="brand" aria-hidden="false">
+        <div class="logo" aria-hidden="true">21</div>
+        <div class="site-title">
+          <div class="title">Монгол Улсын 21 аймаг</div>
+          <div class="subtitle">Тус бүрийн хамгийн үзэсгэлэнт газар — нэг бүр нэг нүүр</div>
+        </div>
+      </div>
+
+      <div class="controls" role="search">
+        <div class="search" aria-label="Аймгийн хайлт">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.35-4.35" stroke="#b0b7c3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="5.5" stroke="#b0b7c3" stroke-width="1.6"/></svg>
+          <input type="search" id="q" placeholder="Аймаг хайх (Ж: Улаанбаатар, Хэнтий...)" oninput="filterCards(this.value)" />
+        </div>
+        <a class="cta" href="#" onclick="event.preventDefault();document.getElementById('q').focus();">Аймгийн индекс</a>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Товч танилцуулга">
+      <div class="hero-left">
+        <h1>21 аймаг — нэг хуудас, 21 түүх</h1>
+        <p>Тус бүрийн нэр, тэдгээрийн хамгийн үзэсгэлэнт газар — цагаан, цэнхэр, хар өнгийн минимал, орчин үеийн дизайнтай. Зураг дараад дэлгэрэнгүй хуудас руу үсрүүлнэ.</p>
+      </div>
+      <div class="hero-right">
+        <!-- small decorative -->
+        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2" y="3" width="20" height="14" rx="2" stroke="#0a66ff" stroke-width="1.2" />
+          <path d="M2 19h20" stroke="#0a66ff" stroke-width="1.2"/>
+          <circle cx="7" cy="9" r="1.3" fill="#0a66ff" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Grid of 21 provinces (replace images & place names as needed) -->
+    <section class="grid" id="grid">
+
+      <!-- Card template: duplicate/change for all 21 -->
+      <!-- 1 -->
+      <article class="card" data-name="Архангай">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1505765054836-7f2f7a4a3b5b?q=80&w=1600&auto=format&fit=crop" alt="Архангай - Тус аймгийн үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Архангай</div>
+            <div class="badge">Хойд</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Тэрэлжийн нуруу (жишээ)</div>
+          <div class="meta">
+            <div class="small">Талбай: 55,000 км² • Хүн ам: жишээ</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card" data-name="Баян-Өлгий">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Баян-Өлгий - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Баян-Өлгий</div>
+            <div class="badge">Баруун</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Алтайн нуруу (жишээ)</div>
+          <div class="meta">
+            <div class="small">Монголын баруун хязгаар</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card" data-name="Булган">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Булган - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Булган</div>
+            <div class="badge">Төв</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Хөвсгөлийн хөндий (жишээ)</div>
+          <div class="meta">
+            <div class="small">Номууд: түүх, байгалийн үзэсгэлэн</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="card" data-name="Говь-Алтай">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" alt="Говь-Алтай - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Говь-Алтай</div>
+            <div class="badge">Баруун</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Хомын говь (жишээ)</div>
+          <div class="meta">
+            <div class="small">Нарлаг газар</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="card" data-name="Дархан-Уул">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Дархан-Уул - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Дархан-Уул</div>
+            <div class="badge">Хойд</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Дархадын ой (жишээ)</div>
+          <div class="meta">
+            <div class="small">Аялал жуулчлал</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="card" data-name="Дорноговь">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Дорноговь - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Дорноговь</div>
+            <div class="badge">Зүүн</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Халх голын хөндий (жишээ)</div>
+          <div class="meta">
+            <div class="small">Говь бүс</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="card" data-name="Дорнод">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" alt="Дорнод - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Дорнод</div>
+            <div class="badge">Зүүн</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Хөгнө нуур (жишээ)</div>
+          <div class="meta">
+            <div class="small">Хүндэтгэсэн газар</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="card" data-name="Дундговь">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1505765054836-7f2f7a4a3b5b?q=80&w=1600&auto=format&fit=crop" alt="Дундговь - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Дундговь</div>
+            <div class="badge">Төв</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Хөндий тал (жишээ)</div>
+          <div class="meta">
+            <div class="small">Говь тал</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="card" data-name="Өвгөн">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Өвгөн - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Өвөрхангай</div>
+            <div class="badge">Төв</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Тэс голын хөндий (жишээ)</div>
+          <div class="meta">
+            <div class="small">Архитектур, байгалийн холимог</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10 -->
+      <article class="card" data-name="Өмнөговь">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Өмнөговь - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Өмнөговь</div>
+            <div class="badge">Баруун</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Хүрэнтэс (жишээ)</div>
+          <div class="meta">
+            <div class="small">Баруун говь</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 11 -->
+      <article class="card" data-name="Сүхбаатар">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Сүхбаатар - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Сүхбаатар</div>
+            <div class="badge">Зүүн</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Газар нутгийн онцлог (жишээ)</div>
+          <div class="meta">
+            <div class="small">Аялал жуулчлал</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 12 -->
+      <article class="card" data-name="Сэлэнгэ">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" alt="Сэлэнгэ - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Сэлэнгэ</div>
+            <div class="badge">Хойд</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Туул болон Өлзийт (жишээ)</div>
+          <div class="meta">
+            <div class="small">Нутаг нутгийн баялаг</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 13 -->
+      <article class="card" data-name="Төв">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1505765054836-7f2f7a4a3b5b?q=80&w=1600&auto=format&fit=crop" alt="Төв - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Төв</div>
+            <div class="badge">Төв</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Хөдөө талын үзэмж (жишээ)</div>
+          <div class="meta">
+            <div class="small">Төв аймаг</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 14 -->
+      <article class="card" data-name="Увс">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Увс - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Увс</div>
+            <div class="badge">Баруун</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Увс нуур (жишээ)</div>
+          <div class="meta">
+            <div class="small">Нуурын эрэг</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 15 -->
+      <article class="card" data-name="Ховд">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Ховд - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Ховд</div>
+            <div class="badge">Баруун</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Ховдын хөндий (жишээ)</div>
+          <div class="meta">
+            <div class="small">Байгалийн олон төрөлт</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 16 -->
+      <article class="card" data-name="Хэнтий">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Хэнтий - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Хэнтий</div>
+            <div class="badge">Зүүн</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Түүхэн дурсгалт газар (жишээ)</div>
+          <div class="meta">
+            <div class="small">Түүх соёл</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 17 -->
+      <article class="card" data-name="Улаанбаатар">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Улаанбаатар - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Улаанбаатар</div>
+            <div class="badge">Хот</div>
+          </div>
+          <div class="place">Тус хотоор: Богд хан уул (жишээ)</div>
+          <div class="meta">
+            <div class="small">Нийслэл</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 18 -->
+      <article class="card" data-name="Орхон">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1505765054836-7f2f7a4a3b5b?q=80&w=1600&auto=format&fit=crop" alt="Орхон - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Орхон</div>
+            <div class="badge">Төв</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Орхон гол (жишээ)</div>
+          <div class="meta">
+            <div class="small">Өвөрмөц</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 19 -->
+      <article class="card" data-name="Говьсүмбэр">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Говьсүмбэр - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Говьсүмбэр</div>
+            <div class="badge">Төв</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт: Хүрээлэн буй орчин (жишээ)</div>
+          <div class="meta">
+            <div class="small">Жижиг, цэвэр</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 20 -->
+      <article class="card" data-name="Хэнтийн-2">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" alt="Жишээ аймаг - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Жишээ аймаг 20</div>
+            <div class="badge">Төв</div>
+          </div>
+          <div class="place">Тус аймгийн үзэсгэлэнт газар (жишээ)</div>
+          <div class="meta">
+            <div class="small">Дэлгэрэнгүй мэдээлэл</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 21 -->
+      <article class="card" data-name="Жишээ 21">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Жишээ 21 - үзэсгэлэнт газар" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="province">
+            <div class="name">Жишээ аймаг 21</div>
+            <div class="badge">Баруун</div>
+          </div>
+          <div class="place">Хамгийн үзэсгэлэнт газар (жишээ)</div>
+          <div class="meta">
+            <div class="small">Нэмэлт: тайлбар</div>
+            <a class="more" href="#">Дэлгэрэнгүй →</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <div class="note">Зураг болон дэлгэрэнгүй линкийг өөрийн агуулгатай сольж, "Дэлгэрэнгүй" дээр тус бүрийн татах хуудас руу залгана.</div>
+  </div>
+
+  <script>
+    // Simple client-side filter by province name (mon/eng)
+    function filterCards(q) {
+      const value = String(q).trim().toLowerCase();
+      const cards = document.querySelectorAll('#grid .card');
+      cards.forEach(card => {
+        const name = card.dataset.name || '';
+        const place = card.querySelector('.place')?.innerText || '';
+        const text = (name + ' ' + place).toLowerCase();
+        if(!value || text.includes(value)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Accessibility: make "Enter" on card media open link if exists (Optional)
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('keydown', e => {
+        if(e.key === 'Enter') {
+          const link = card.querySelector('.more');
+          if(link) link.click();
+        }
+      });
+      card.setAttribute('tabindex','0');
+    });
+  </script>
+</body>
+</html>

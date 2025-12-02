@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Монгол Дээл — Премиум Веб</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Base */
+body {
+    margin:0;
+    font-family:'Montserrat',sans-serif;
+    background:#fdfdfd;
+    color:#111;
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit;}
+
+/* Header */
+header{
+    position:fixed;top:0;width:100%;z-index:2000;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(15px);
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+}
+nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:20px 60px;
+}
+.logo{font-size:30px;font-weight:700;color:#0b3d91;}
+nav ul{list-style:none;display:flex;gap:35px;}
+nav ul li a{font-weight:500;font-size:16px;transition:.3s;}
+nav ul li a:hover{color:#1e90ff;}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
+    url('https://ubn.mn/storage/deel%20surwaljilga/%D0%B413.jpg') center/cover no-repeat;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:0 20px;
+}
+.hero h1{
+    font-size:64px;font-weight:700;margin-bottom:20px;text-shadow:0 5px 20px rgba(0,0,0,0.5);
+}
+.hero p{font-size:22px;max-width:900px;}
+
+/* Sections */
+section{padding:100px 10%;position:relative;}
+h2{font-size:46px;color:#0b3d91;margin-bottom:30px;font-weight:700;position:relative;}
+h2::after{content:"";width:80px;height:4px;background:#1e90ff;display:block;margin-top:10px;border-radius:2px;}
+.sub-title{font-size:28px;font-weight:600;margin-top:50px;margin-bottom:15px;color:#0b3d91;}
+.long-text{max-width:1150px;line-height:1.8;font-size:18px;color:#222;}
+.long-text.small{font-size:16px;}
+
+/* Grid & Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px;}
+.card{
+    background:#fff;padding:25px;border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);border:1px solid #e0e5ec;
+    transition:0.5s;overflow:hidden;position:relative;
+}
+.card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:0 20px 40px rgba(0,0,0,0.12);
+    border-color:#1e90ff;
+}
+.card img{width:100%;border-radius:12px;margin-bottom:15px;transition:.5s;}
+.card img:hover{transform:scale(1.03);}
+
+/* Images */
+.section-image{width:100%;max-width:900px;margin:35px auto;border-radius:15px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:.5s;}
+.section-image:hover{transform:scale(1.02);}
+
+/* Footer */
+footer{background:#0b3d91;color:#fff;text-align:center;padding:30px;margin-top:60px;font-size:16px;}
+
+/* Back to Top */
+#backTop{
+    position:fixed;bottom:30px;right:30px;background:#1e90ff;color:#fff;padding:12px 18px;border-radius:10px;cursor:pointer;
+    display:none;box-shadow:0 5px 20px rgba(0,0,0,0.3);transition:0.3s;
+}
+#backTop:hover{background:#0b78e3;}
+
+/* Animation on scroll */
+.fade-in{opacity:0;transform:translateY(30px);transition:all 1s ease-out;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <div class="logo">Монгол Дээл</div>
+    <ul>
+        <li><a href="#origin">Үүсэл</a></li>
+        <li><a href="#history">Түүх</a></li>
+        <li><a href="#structure">Бүтэц</a></li>
+        <li><a href="#materials">Материал</a></li>
+        <li><a href="#regions">Бүс</a></li>
+        <li><a href="#wear">Өмсөх</a></li>
+    </ul>
+</nav>
+</header>
+
+<div class="hero">
+<h1>Монгол Дээл — Нүүдэлчдийн Үндэсний Өмсгөл</h1>
+<p>Дээл бол монголчуудын соёл, ахуй, өв уламжлалыг илэрхийлсэн хамгийн эртний, гүн утгатай өмсгөл юм.</p>
+</div>
+
+<!-- ORIGIN -->
+<section id="origin" class="fade-in">
+<h2>📜 Үүсэл Шалтгаан</h2>
+<div class="long-text">
+<p>Монгол дээл нь нүүдэлчдийн амьдралын хэв маяг, цаг уур, мал аж ахуйн онцлог, байлдааны шаардлагаас урган гарсан.</p>
+<p class="small">Эртний Хүннү, Түрэг, Уйгурын үед дээлний хэлбэр нь орчин үеийн дээлтэй төстэй байжээ.</p>
+<img class="section-image" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Hunnu_clothing.jpg" alt="Хүннүгийн дээл">
+</div>
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="fade-in">
+<h2>🏺 Дээлний Түүх</h2>
+<div class="long-text">
+<div class="sub-title">Хүннү үе</div>
+<p class="small">Булшнаас олдсон богино ханцуйтай, бүстэй дээл нь орчин үеийн дээлний эх хэлбэр юм.</p>
+<img class="section-image" src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Ancient_clothes.jpg" alt="Эртний дээлний зураг">
+<div class="sub-title">Их Монгол Улс</div>
+<p>Эзэнт гүрний үед дээлний төрөл, өнгө, хээ угалз нарийн ялгарсан.</p>
+</div>
+</section>
+
+<!-- STRUCTURE -->
+<section id="structure" class="fade-in">
+<h2>🧩 Дээлний Бүтэц</h2>
+<div class="grid">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Mongolian_deel_parts.jpg" alt="Дээлний хэсгүүд">
+<h3>Зах</h3>
+<p class="small">Хийморь, хамгааллын бэлгэдэл.</p>
+</div>
+<div class="card">
+<h3>Өмсгөл</h3>
+<p class="small">Биеийг бүхэлд нь ороож, салхи шуургаас хамгаалдаг.</p>
+</div>
+<div class="card">
+<h3>Хормой</h3>
+<p class="small">Морь унахад тохиромжтой.</p>
+</div>
+</div>
+</section>
+
+<!-- MATERIALS -->
+<section id="materials" class="fade-in">
+<h2>🧵 Материал</h2>
+<div class="long-text">
+<ul style="line-height:1.8;">
+<li>✔ Бархат — язгууртны хувцас</li>
+<li>✔ Торго — баярын дээл</li>
+<li>✔ Нэхий — өвлийн дулаан хувцас</li>
+<li>✔ Ноосон даавуу — өдөр тутмын дээл</li>
+<li>✔ Арьс, шир — өвлийн ажил хэрэгч хувцас</li>
+</ul>
+<img class="section-image" src="https://upload.wikimedia.org/wikipedia/commons/7/74/Mongolian_traditional_clothes.jpg" alt="Дээлний материал">
+</div>
+</section>
+
+<!-- REGIONAL -->
+<section id="regions" class="fade-in">
+<h2>🌍 Бүс нутгийн ялгаа</h2>
+<div class="grid">
+<div class="card"><h3>Буриад</h3><p class="small">Өргөн мөртэй, тод өнгөтэй</p></div>
+<div class="card"><h3>Дархад</h3><p class="small">Хөвсгөр, том хормойтой</p></div>
+<div class="card"><h3>Халх</h3><p class="small">Классик загвар</p></div>
+</div>
+</section>
+
+<!-- WEAR -->
+<section id="wear" class="fade-in">
+<h2>🎎 Өмсөх Ёс</h2>
+<div class="long-text">
+<div class="sub-title">Баяр ёслол</div>
+<p class="small">Цагаан сар, Наадам, хурим, төрийн ёслол.</p>
+<div class="sub-title">Өдөр тутам</div>
+<p class="small">Малчид өдөр тутмын болон улиралд зориулсан дээл өмсдөг.</p>
+</div>
+</section>
+
+<footer>
+© 2025 Монгол Дээл Судлал
+</footer>
+
+<div id="backTop">▲</div>
+
+<script>
+// Back to top
+const backTop=document.getElementById("backTop");
+window.addEventListener("scroll",()=>{backTop.style.display=window.scrollY>300?"block":"none"});
+backTop.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});
+
+// Scroll Animation
+const faders=document.querySelectorAll('.fade-in');
+const appearOptions={threshold:0.1,rootMargin:"0px 0px -50px 0px"};
+const appearOnScroll=new IntersectionObserver(function(entries,appearOnScroll){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting){return;}
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+    });
+},appearOptions);
+faders.forEach(fader=>{appearOnScroll.observe(fader);});
+</script>
+
+</body>
+</html>

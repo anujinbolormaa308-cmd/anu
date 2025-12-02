@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Үндэсний Өвийг Дэмжүүлэх Төв</title>
+<style>
+/* --------------- GENERAL --------------- */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background:#f0f4ff;color:#222;line-height:1.6;}
+h1,h2,h3{font-family:'Georgia', serif;}
+img{display:block;max-width:100%;border-radius:12px;}
+a{text-decoration:none;color:inherit;}
+section{padding:80px 20px;}
+.container{max-width:1200px;margin:0 auto;}
+
+/* --------------- NAVBAR --------------- */
+.navbar{
+    position:fixed;top:0;width:100%;z-index:1000;
+    background:rgba(30,136,229,0.85);
+    display:flex;justify-content:center;gap:50px;padding:15px 0;
+    backdrop-filter:blur(8px);
+}
+.navbar a{
+    color:white;font-weight:bold;position:relative;transition:all 0.3s;
+}
+.navbar a::after{
+    content:'';position:absolute;width:0;height:2px;bottom:-4px;left:0;background:white;transition:0.3s;
+}
+.navbar a:hover::after{width:100%;}
+
+/* --------------- HERO --------------- */
+.hero{
+    height:100vh;
+    background: linear-gradient(135deg,#4da6ff,#1c8aff);
+    display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:white;position:relative;
+    overflow:hidden;
+}
+.hero h1{font-size:52px;margin-bottom:20px;}
+.hero p{font-size:20px;margin-bottom:35px;max-width:700px;}
+.hero button{
+    background:white;color:#1c8aff;font-weight:bold;padding:18px 40px;border-radius:30px;border:none;cursor:pointer;
+    transition:all 0.3s ease;
+}
+.hero button:hover{background:#1c8aff;color:white;transform:scale(1.05);}
+
+/* --------------- INFO CARDS --------------- */
+.info-section{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;background:#e6f0ff;padding:80px 20px;}
+.info-card{
+    background:white;width:280px;border-radius:20px;padding:30px;text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);transition:all 0.3s ease;
+}
+.info-card img{width:60px;margin-bottom:15px;}
+.info-card p{font-size:15px;font-weight:bold;}
+.info-card:hover{transform:translateY(-12px);box-shadow:0 12px 30px rgba(0,0,0,0.25);}
+
+/* --------------- GALLERY SECTION (Үе дамжсан өв) --------------- */
+.gallery-section{padding:80px 20px;background:#f0f4ff;}
+.gallery-row{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:25px;
+}
+.gallery-card{
+    position:relative;overflow:hidden;border-radius:18px;
+    box-shadow:0 12px 25px rgba(0,0,0,0.2);transition:all 0.3s ease;
+    flex:1 1 300px; max-width:350px;
+}
+.gallery-card img{
+    width:100%;height:250px;object-fit:cover;transition:all 0.3s ease;
+}
+.gallery-card:hover img{transform:scale(1.05);}
+.gallery-overlay{
+    position:absolute;top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,0.35); color:white;
+    opacity:0; display:flex; justify-content:center; align-items:center;
+    font-size:18px;text-align:center;padding:10px;transition:opacity 0.3s;
+}
+.gallery-card:hover .gallery-overlay{opacity:1;}
+
+/* --------------- PRIDE / HISTORY / CULTURE CARDS --------------- */
+.card-section{padding:80px 20px;background:#e6f0ff;}
+.card-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;justify-items:center;
+}
+.card-item{
+    background:white;border-radius:18px;padding:25px;text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);transition:all 0.3s ease;position:relative;
+}
+.card-item img{width:60px;margin-bottom:15px;}
+.card-item p{font-weight:bold;}
+.card-item:hover{transform:translateY(-10px);box-shadow:0 12px 30px rgba(0,0,0,0.25);}
+
+/* --------------- FOOTER --------------- */
+.footer{
+    background: linear-gradient(135deg,#1c8aff,#4da6ff);
+    color:white;padding:80px 20px;text-align:center;position:relative;
+}
+.footer-grid{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:60px;margin-bottom:40px;
+}
+.footer-grid div{
+    display:flex;flex-direction:column;align-items:center;gap:8px;transition:all 0.3s;
+}
+.footer-grid div:hover{transform:translateY(-6px);}
+.footer-grid img{width:40px;filter:drop-shadow(0 2px 5px rgba(0,0,0,0.3));}
+.footer-logo img{width:80px;margin-bottom:10px;filter:drop-shadow(0 3px 10px rgba(0,0,0,0.4));}
+.footer p{margin-top:5px;font-weight:bold;font-size:14px;}
+
+/* --------------- MEDIA --------------- */
+@media(max-width:768px){
+    .hero h1{font-size:38px;}
+    .hero p{font-size:18px;}
+    .info-section,.card-section,.gallery-section{padding:60px 15px;}
+    .info-card{width:90%;}
+    .gallery-card{flex:1 1 90%;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div class="navbar">
+    <a href="#hero">Нүүр</a>
+    <a href="#info">Мэдээлэл</a>
+    <a href="#gallery">Үе дамжсан өв</a>
+    <a href="#cards">Бахархал</a>
+    <a href="#footer">Холбоо</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <h1>Үндэсний Өвийг Дэмжүүлэх Төв</h1>
+    <p>Монгол түүх, соёлын үнэт хадгаламжийг өвлүүлэн үлдээх нь бидний ирээдүй хойч үеийн үүрэг юм. Энэ сайт нь бүх мэдээлэл, түүх, урлаг соёл, өв уламжлалыг нэгтгэсэн урт нүүр хуудас болно.</p>
+    <button>Дэлгэрэнгүй үзэх</button>
+</section>
+
+<!-- INFO SECTION -->
+<section class="info-section" id="info">
+    <div class="info-card">
+        <img src="https://img.freepik.com/premium-vector/kazakh-ornament-oyu-ornek_634064-602.jpg?w=1060">
+        <p>Өв соёл — бидний үнэт эрдэнэ.</p>
+    </div>
+    <div class="info-card">
+        <img src="https://img.freepik.com/premium-vector/kazakh-ornament-oyu-ornek_634064-602.jpg?w=1060">
+        <p>Өв уламжлал ирээдүй хойч үедээ үлдэх холбоо.</p>
+    </div>
+    <div class="info-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png">
+        <p>Түүх, зан заншил, урлагийг хадгалах.</p>
+    </div>
+</section>
+
+<!-- GALLERY SECTION (ҮЕ ДАМЖСАН ӨВ) -->
+<section class="gallery-section" id="gallery">
+    <h2 style="text-align:center;margin-bottom:40px;">Үе дамжсан өв</h2>
+    <div class="gallery-row">
+        <div class="gallery-card">
+            <img src="https://resource4.sodonsolution.org/24tsag/photo/2014/4/54f7750ca79bc97e/e3621672dd9cba7boriginal.png">
+            <div class="gallery-overlay">Үе дамжсан өв 1</div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://cdn.zochil.shop/80119fcf-2b69-47b7-8deb-7b96fe0b4c37_t500.jpg">
+            <div class="gallery-overlay">Үе дамжсан өв 2</div>
+        </div>
+        <div class="gallery-card">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMwNbZkv-RV9VG7EW-AlFLaxbNf7Hr9g5N1ezfRLEucCcwpynXvB1dPFWmVI4qD-xwU_tXWD3AIJdkZCMp9ITxSJewnCFJqEwSclmfNNPSd-kX7HRxUIL7OawnFctSIikhudqFMQ6rT4M/s1600/393923_10150543931486552_779016551_8862179_879699447_n.jpg">
+            <div class="gallery-overlay">Үе дамжсан өв 3</div>
+        </div>
+    </div>
+</section>
+
+<!-- PRIDE / HISTORY / CULTURE CARDS -->
+<section class="card-section" id="cards">
+    <h2 style="text-align:center;margin-bottom:40px;">Бидний бахархал</h2>
+    <div class="card-grid">
+        <div class="card-item">
+            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/fe833923393073.54d2eaea08218.jpg">
+            <p>Үндэсний хувцас</p>
+        </div>
+        <div class="card-item">
+            <img src="https://img.freepik.com/premium-vector/face-curly-hair-nobleman-logo-design_15473-14602.jpg">
+            <p>Эрт үеийн түүх, өв</p>
+        </div>
+        <div class="card-item">
+            <img src="https://www.creativefabrica.com/wp-content/uploads/2023/03/30/Minimalist-Nature-Logo-Design-Graphics-65737468-1.jpg">
+            <p>Түүхэн дурсгалт газар</p>
+        </div>
+        <div class="card-item">
+            <img src="https://static.vecteezy.com/system/resources/previews/005/988/959/non_2x/calendar-icon-free-vector.jpg">
+            <p>Монгол үндэсний тоглоом</p>
+        </div>
+        <div class="card-item">
+            <img src="https://thumbs.dreamstime.com/z/vector-mongolian-concept-hand-drawn-symbols-mongolia-including-yurt-camel-girl-traditional-cloth-illustration-93451621.jpg?w=768">
+            <p>Монголын урлаг</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+    <div class="footer-grid">
+        <div><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"><p>example@gmail.com</p></div>
+        <div><img src="https://cdn-icons-png.flaticon.com/512/15/15980.png"><p>+976 88223347</p></div>
+        <div><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"><p>САНАЛ БИЧИХ ҮҮ?</p></div>
+        <div><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"><p>www.website-mn.mn</p></div>
+    </div>
+    <div class="footer-logo">
+        <img src="https://cdn.pixabay.com/photo/2017/02/18/19/20/logo-2078018_640.png">
+        <p>Үндэсний Өвийг Дэмжүүлэх Төв</p>
+    </div>
+</footer>
+</body>
+</html>

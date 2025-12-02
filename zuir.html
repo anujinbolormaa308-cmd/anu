@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Монгол Зүйр Цэцэн Үг & Оньс</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Base */
+body {margin:0;font-family:'Montserrat',sans-serif;background:#fafafa;color:#111;scroll-behavior:smooth;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+header{position:fixed;top:0;width:100%;z-index:2000;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;}
+.logo{font-size:28px;font-weight:700;color:#0b3d91;}
+nav ul{list-style:none;display:flex;gap:30px;}
+nav ul li a{font-weight:500;font-size:16px;transition:.3s;}
+nav ul li a:hover{color:#1e90ff;}
+
+/* Hero */
+.hero{height:80vh;background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)),url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Mongolian_writing.jpg') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:white;padding:0 20px;}
+.hero h1{font-size:50px;margin-bottom:20px;font-weight:700;text-shadow:0 4px 15px rgba(0,0,0,0.5);}
+.hero p{font-size:20px;max-width:800px;}
+
+/* Section */
+section{padding:100px 10%;position:relative;}
+h2{font-size:40px;color:#0b3d91;margin-bottom:25px;font-weight:700;position:relative;}
+h2::after{content:"";display:block;width:70px;height:3px;background:#1e90ff;margin-top:8px;border-radius:2px;}
+.sub-title{font-size:26px;font-weight:600;margin-top:40px;margin-bottom:15px;color:#0b3d91;}
+.text{line-height:1.8;font-size:18px;color:#222;max-width:1100px;}
+.small{font-size:16px;}
+
+/* Grid / Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:40px;}
+.card{background:#fff;padding:20px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.08);border:1px solid #e0e5ec;transition:.5s;overflow:hidden;position:relative;}
+.card:hover{transform: translateY(-8px) scale(1.03);box-shadow:0 20px 40px rgba(0,0,0,0.12);border-color:#1e90ff;}
+.card h3{margin:10px 0 8px 0;color:#0b3d91;font-size:20px;}
+.card p{font-size:16px;line-height:1.6;}
+
+/* Footer */
+footer{background:#0b3d91;color:white;text-align:center;padding:30px;margin-top:60px;font-size:16px;}
+
+/* Back to top */
+#backTop{position:fixed;bottom:30px;right:30px;background:#1e90ff;color:#fff;padding:12px 18px;border-radius:10px;cursor:pointer;display:none;box-shadow:0 5px 20px rgba(0,0,0,0.3);transition:.3s;}
+#backTop:hover{background:#0b78e3;}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div class="logo">Монгол Зүйр & Оньс</div>
+<ul>
+<li><a href="#origin">Үүсэл</a></li>
+<li><a href="#proverbs">Зүйр Цэцэн Үг</a></li>
+<li><a href="#riddles">Оньс</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="hero">
+<h1>Монголын Зүйр Цэцэн Үг & Оньс</h1>
+<p>Эртнээс уламжлагдан ирсэн цэцэн үг, оньс нь оюуны сургамж, ёс суртахуун, ухаарал түгээдэг.</p>
+</div>
+
+<!-- Origin -->
+<section id="origin">
+<h2>🕊️ Үүсэл ба ач холбогдол</h2>
+<div class="text">
+<p>Монголын зүйр цэцэн үг, оньс нь нүүдэлчдийн амьдралын туршлага, байгаль, хүмүүнлэг, ёс суртахуунд суурилсан уламжлалт хэлбэр юм. Үүнийг хүмүүс хүүхэд, залуу насандаа сурч, амьдралд хэрэгжүүлдэг.</p>
+<p class="small">Эдгээр нь ойлголт, бодол санаа, ёс заншил, ухаарал, ёс суртахууны сургамжийг дамжуулах хэрэгсэл болж, нийгэмд зөв дадал, ухаарал түгээдэг.</p>
+</div>
+</section>
+
+<!-- Proverbs -->
+<section id="proverbs">
+<h2>📝 Зүйр Цэцэн Үг (50)</h2>
+<div class="grid">
+<!-- 1-50 Зүйр үг -->
+<div class="card"><h3>1. Үг 1</h3><p>Тайлбар 1</p></div>
+<div class="card"><h3>2. Үг 2</h3><p>Тайлбар 2</p></div>
+<div class="card"><h3>3. Үг 3</h3><p>Тайлбар 3</p></div>
+<div class="card"><h3>4. Үг 4</h3><p>Тайлбар 4</p></div>
+<div class="card"><h3>5. Үг 5</h3><p>Тайлбар 5</p></div>
+<div class="card"><h3>6. Үг 6</h3><p>Тайлбар 6</p></div>
+<div class="card"><h3>7. Үг 7</h3><p>Тайлбар 7</p></div>
+<div class="card"><h3>8. Үг 8</h3><p>Тайлбар 8</p></div>
+<div class="card"><h3>9. Үг 9</h3><p>Тайлбар 9</p></div>
+<div class="card"><h3>10. Үг 10</h3><p>Тайлбар 10</p></div>
+
+<div class="card"><h3>11. Үг 11</h3><p>Тайлбар 11</p></div>
+<div class="card"><h3>12. Үг 12</h3><p>Тайлбар 12</p></div>
+<div class="card"><h3>13. Үг 13</h3><p>Тайлбар 13</p></div>
+<div class="card"><h3>14. Үг 14</h3><p>Тайлбар 14</p></div>
+<div class="card"><h3>15. Үг 15</h3><p>Тайлбар 15</p></div>
+<div class="card"><h3>16. Үг 16</h3><p>Тайлбар 16</p></div>
+<div class="card"><h3>17. Үг 17</h3><p>Тайлбар 17</p></div>
+<div class="card"><h3>18. Үг 18</h3><p>Тайлбар 18</p></div>
+<div class="card"><h3>19. Үг 19</h3><p>Тайлбар 19</p></div>
+<div class="card"><h3>20. Үг 20</h3><p>Тайлбар 20</p></div>
+
+<div class="card"><h3>21. Үг 21</h3><p>Тайлбар 21</p></div>
+<div class="card"><h3>22. Үг 22</h3><p>Тайлбар 22</p></div>
+<div class="card"><h3>23. Үг 23</h3><p>Тайлбар 23</p></div>
+<div class="card"><h3>24. Үг 24</h3><p>Тайлбар 24</p></div>
+<div class="card"><h3>25. Үг 25</h3><p>Тайлбар 25</p></div>
+<div class="card"><h3>26. Үг 26</h3><p>Тайлбар 26</p></div>
+<div class="card"><h3>27. Үг 27</h3><p>Тайлбар 27</p></div>
+<div class="card"><h3>28. Үг 28</h3><p>Тайлбар 28</p></div>
+<div class="card"><h3>29. Үг 29</h3><p>Тайлбар 29</p></div>
+<div class="card"><h3>30. Үг 30</h3><p>Тайлбар 30</p></div>
+
+<div class="card"><h3>31. Үг 31</h3><p>Тайлбар 31</p></div>
+<div class="card"><h3>32. Үг 32</h3><p>Тайлбар 32</p></div>
+<div class="card"><h3>33. Үг 33</h3><p>Тайлбар 33</p></div>
+<div class="card"><h3>34. Үг 34</h3><p>Тайлбар 34</p></div>
+<div class="card"><h3>35. Үг 35</h3><p>Тайлбар 35</p></div>
+<div class="card"><h3>36. Үг 36</h3><p>Тайлбар 36</p></div>
+<div class="card"><h3>37. Үг 37</h3><p>Тайлбар 37</p></div>
+<div class="card"><h3>38. Үг 38</h3><p>Тайлбар 38</p></div>
+<div class="card"><h3>39. Үг 39</h3><p>Тайлбар 39</p></div>
+<div class="card"><h3>40. Үг 40</h3><p>Тайлбар 40</p></div>
+
+<div class="card"><h3>41. Үг 41</h3><p>Тайлбар 41</p></div>
+<div class="card"><h3>42. Үг 42</h3><p>Тайлбар 42</p></div>
+<div class="card"><h3>43. Үг 43</h3><p>Тайлбар 43</p></div>
+<div class="card"><h3>44. Үг 44</h3><p>Тайлбар 44</p></div>
+<div class="card"><h3>45. Үг 45</h3><p>Тайлбар 45</p></div>
+<div class="card"><h3>46. Үг 46</h3><p>Тайлбар 46</p></div>
+<div class="card"><h3>47. Үг 47</h3><p>Тайлбар 47</p></div>
+<div class="card"><h3>48. Үг 48</h3><p>Тайлбар 48</p></div>
+<div class="card"><h3>49. Үг 49</h3><p>Тайлбар 49</p></div>
+<div class="card"><h3>50. Үг 50</h3><p>Тайлбар 50</p></div>
+</div>
+</section>
+
+<!-- Riddles -->
+<section id="riddles">
+<h2>🧩 Оньс (50)</h2>
+<div class="grid">
+<!-- 1-50 Оньс -->
+<div class="card"><h3>1. Оньс 1</h3><p>Хариулт 1</p></div>
+<div class="card"><h3>2. Оньс 2</h3><p>Хариулт 2</p></div>
+<div class="card"><h3>3. Оньс 3</h3><p>Хариулт 3</p></div>
+<div class="card"><h3>4. Оньс 4</h3><p>Хариулт 4</p></div>
+<div class="card"><h3>5. Оньс 5</h3><p>Хариулт 5</p></div>
+<div class="card"><h3>6. Оньс 6</h3><p>Хариулт 6</p></div>
+<div class="card"><h3>7. Оньс 7</h3><p>Хариулт 7</p></div>
+<div class="card"><h3>8. Оньс 8</h3><p>Хариулт 8</p></div>
+<div class="card"><h3>9. Оньс 9</h3><p>Хариулт 9</p></div>
+<div class="card"><h3>10. Оньс 10</h3><p>Хариулт 10</p></div>
+
+<div class="card"><h3>11. Оньс 11</h3><p>Хариулт 11</p></div>
+<div class="card"><h3>12. Оньс 12</h3><p>Хариулт 12</p></div>
+<div class="card"><h3>13. Оньс 13</h3><p>Хариулт 13</p></div>
+<div class="card"><h3>14. Оньс 14</h3><p>Хариулт 14</p></div>
+<div class="card"><h3>15. Оньс 15</h3><p>Хариулт 15</p></div>
+<div class="card"><h3>16. Оньс 16</h3><p>Хариулт 16</p></div>
+<div class="card"><h3>17. Оньс 17</h3><p>Хариулт 17</p></div>
+<div class="card"><h3>18. Оньс 18</h3><p>Хариулт 18</p></div>
+<div class="card"><h3>19. Оньс 19</h3><p>Хариулт 19</p></div>
+<div class="card"><h3>20. Оньс 20</h3><p>Хариулт 20</p></div>
+
+<div class="card"><h3>21. Оньс 21</h3><p>Хариулт 21</p></div>
+<div class="card"><h3>22. Оньс 22</h3><p>Хариулт 22</p></div>
+<div class="card"><h3>23. Оньс 23</h3><p>Хариулт 23</p></div>
+<div class="card"><h3>24. Оньс 24</h3><p>Хариулт 24</p></div>
+<div class="card"><h3>25. Оньс 25</h3><p>Хариулт 25</p></div>
+<div class="card"><h3>26. Оньс 26</h3><p>Хариулт 26</p></div>
+<div class="card"><h3>27. Оньс 27</h3><p>Хариулт 27</p></div>
+<div class="card"><h3>28. Оньс 28</h3><p>Хариулт 28</p></div>
+<div class="card"><h3>29. Оньс 29</h3><p>Хариулт 29</p></div>
+<div class="card"><h3>30. Оньс 30</h3><p>Хариулт 30</p></div>
+
+<div class="card"><h3>31. Оньс 31</h3><p>Хариулт 31</p></div>
+<div class="card"><h3>32. Оньс 32</h3><p>Хариулт 32</p></div>
+<div class="card"><h3>33. Оньс 33</h3><p>Хариулт 33</p></div>
+<div class="card"><h3>34. Оньс 34</h3><p>Хариулт 34</p></div>
+<div class="card"><h3>35. Оньс 35</h3><p>Хариулт 35</p></div>
+<div class="card"><h3>36. Оньс 36</h3><p>Хариулт 36</p></div>
+<div class="card"><h3>37. Оньс 37</h3><p>Хариулт 37</p></div>
+<div class="card"><h3>38. Оньс 38</h3><p>Хариулт 38</p></div>
+<div class="card"><h3>39. Оньс 39</h3><p>Хариулт 39</p></div>
+<div class="card"><h3>40. Оньс 40</h3><p>Хариулт 40</p></div>
+<div class="card"><h3>41. Оньс 41</h3><p>Хариулт 41</p></div>
+<div class="card"><h3>42. Оньс 42</h3><p>Хариулт 42</p></div>
+<div class="card"><h3>43. Оньс 43</h3><p>Хариулт 43</p></div>
+<div class="card"><h3>44. Оньс 44</h3><p>Хариулт 44</p></div>
+<div class="card"><h3>45. Оньс 45</h3><p>Хариулт 45</p></div>
+<div class="card"><h3>46. Оньс 46</h3><p>Хариулт 46</p></div>
+<div class="card"><h3>47. Оньс 47</h3><p>Хариулт 47</p></div>
+<div class="card"><h3>48. Оньс 48</h3><p>Хариулт 48</p></div>
+<div class="card"><h3>49. Оньс 49</h3><p>Хариулт 49</p></div>
+<div class="card"><h3>50. Оньс 50</h3><p>Хариулт 50</p></div>
+</div>
+</section>
+
+<footer>
+© 2025 Монгол Зүйр & Оньс — Соёл ба Оюуны Ухаарал
+</footer>
+
+<div id="backTop">▲</div>
+
+<script>
+// Back to top button
+const backTop=document.getElementById("backTop");
+window.addEventListener("scroll",()=>{backTop.style.display=window.scrollY>300?"block":"none";});
+backTop.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"});});
+</script>
+
+</body>
+</html>

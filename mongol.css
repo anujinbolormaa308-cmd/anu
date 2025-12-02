@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f7ff;
+    color: #222;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background: linear-gradient(#0009, #0009), url("YOUR_HEADER_IMAGE.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 58px;
+    color: #fff;
+    text-shadow: 0 5px 20px #000;
+}
+
+.hero-content p {
+    color: #ddd;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #0d47a1;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #08306b;
+}
+
+/* INTRO */
+.intro {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.intro h2 {
+    color: #0d47a1;
+}
+
+/* BIG IMAGE */
+.big-image {
+    position: relative;
+}
+
+.big-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.big-image .overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #00000088;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* TIMELINE */
+.timeline {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+.timeline h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0d47a1;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item.left {
+    flex-direction: row;
+}
+
+.timeline-item.right {
+    flex-direction: row-reverse;
+}
+
+.timeline-item .content {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    width: 50%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.timeline-item img {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* NAME ORIGIN */
+.name-origin {
+    background: #0d47a1;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* GALLERY */
+.gallery {
+    padding: 50px 0;
+}
+
+.gallery h2 {
+    text-align: center;
+    color: #0d47a1;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* FACTS */
+.facts {
+    padding: 50px 20px;
+}
+
+.facts h2 {
+    text-align: center;
+    color: #0d47a1;
+}
+
+.fact-box {
+    background: white;
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+    .timeline-item {
+        flex-direction: column !important;
+    }
+    .timeline-item .content {
+        width: 100%;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
